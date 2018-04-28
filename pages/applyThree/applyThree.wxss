@@ -1,0 +1,100 @@
+
+@import '../../components/picker-city/pickerCity.wxss';
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f4f7fe;
+  margin-bottom: 90rpx;
+}
+.bg_section_one {
+  background: #ffffff;
+}
+.section_title {
+  padding: 10rpx 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.cell_space_line {
+  height: 2rpx;
+  background: #dbdbdb;
+}
+.cell_hor_line {
+  height: 2rpx;
+  margin-left: 30rpx;
+  background: #dbdbdb;
+}
+.section_view {
+  height: 40rpx;
+  background: #f4f7fe;
+}
+.public_cell_picker {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+  align-items: center;
+}
+.cell_right .left {
+  width: 90%;
+  color: #333;
+}
+.cell_right .right image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.public_cell_input {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+  align-items: center;
+}
+.cell_left {
+  /* font-size: 32rpx; */
+  color: #666;
+  width: 30%;
+
+}
+.cell_right {
+  /* font-size: 32rpx; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  width: 70%;
+  height: 100%;
+}
+.cell_right .left {
+  /* width: 100%; */
+  height: 55rpx;
+}
+.cell_right .right_input {
+  width: 100%;
+  color: #333;
+}
+.bg_section_two, .bg_section_third, .bg_section_four{
+  background: #ffffff;
+}
+.next_btn {
+  width: 100%;
+  height: 90rpx;
+  background: #7080fa;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: 90rpx;
+  color: #ffffff;
+  z-index: 99;
+  border-radius: 0rpx;
+}
+
+ 
+
+
+

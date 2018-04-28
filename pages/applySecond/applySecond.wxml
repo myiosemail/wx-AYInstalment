@@ -1,0 +1,44 @@
+
+ <import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>  
+
+<view class="bg_item">
+  <view class="item_title">
+    <text class="title_top">申请人身份证照</text>
+    <text class="title_bottom">(需要保证图片清晰)</text>
+  </view>
+  <view class="item_content">
+  <block wx:for="{{first_images}}">
+    <view class="image_item">
+      <image class="item_image selected {{item.selected?'select':''}}" src="{{item.relImage}}" mode="Aspect" 
+      bindtap="{{item.selected?'previewImage':'chooseImg'}}" data-id="{{index}}" data-type="0" data-src="{{item.relImage}}"></image>
+      <view class="line"></view>
+      <view class="title_text text_over {{item.selected?'over':''}}">{{item.title}}</view>
+      <image src="../../images/Delete_MedicalGroup.png" 
+        class="delete_image" hidden="{{!item.selected}}" bindtap="deleteImageAction" data-item="{{item}}" data-type="0"></image>
+    </view>
+  </block>
+    
+  </view>
+</view>
+<view class="section_view"></view>
+<view class="bg_item">
+  <view class="item_title">
+    <text class="title_top">医疗确认照</text>
+    <text class="title_bottom">(需包含病历、收费金额、贷款金额、医患签字、盖章)</text>
+  </view>
+  <view class="item_content">
+    <block wx:for="{{second_images}}">
+      <view class="image_item">
+        <image class="item_image selected {{item.selected?'select':''}}" src="{{item.relImage}}" mode="Aspect" 
+        bindtap="{{item.selected?'previewImage':'chooseImg'}}" data-id="{{index}}" data-type="1" data-src="{{item.relImage}}"></image>
+        <view class="line"></view>
+        <view class="title_text">{{item.title}}</view>
+        <image src="../../images/Delete_MedicalGroup.png" 
+        class="delete_image" hidden="{{!item.selected}}" bindtap="deleteImageAction" data-item="{{item}}" data-type="1"></image>
+      </view>
+    </block>
+  </view>
+</view>
+<button class="next_btn" bindtap="nextStepClick">下一步</button>
+

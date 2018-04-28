@@ -1,0 +1,56 @@
+page {
+   display: block;
+   min-height: 100%; 
+   background-color: #f4f7fe; 
+}
+
+.page-head {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #ffffff;
+}
+.page-head .head-section1 {
+  padding: 60rpx 0rpx 30rpx 0rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.page-head .head-section2 {
+  padding-bottom: 30rpx;
+  font-size: 90rpx;
+  color: #ff4040;
+}
+.page-head .head-section3 {
+  padding-bottom: 60rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.page-bottom {
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.page-bottom .bottom-section1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+.page-bottom .bottom-section2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+.page-bottom .line-view {
+  height: 1rpx;
+  margin-left: 30rpx;
+  background: #dbdbdb;
+}
+.bottom-section1 image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 10rpx;
+}
+.bottom-section2 image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 10rpx;
+}

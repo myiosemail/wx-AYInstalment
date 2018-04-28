@@ -1,0 +1,30 @@
+<view class="table-view">
+  <view wx:if="{{itemList.length > 0}}">
+    <block wx:for="{{itemList}}" wx:for-index="{{index}}">
+      <view class="section-title">
+        <text class="section-title-left">{{item.keyStr}}</text>
+        <text class="section-title-right">¥ {{20023.00}}</text>
+      </view>
+      <view class="table-content">
+        <block wx:for="{{item.itemList}}"> 
+        <view class="table-item">
+          <view class="item-group-left">
+            <text class="title">{{item.ProductName}}</text>
+            <text class="content">{{item.PatientName}}</text>
+          </view>
+          <view class="item-group-right">
+            <text class="title">¥ {{item.HospitalMoney}}</text>
+            <text class="content">{{item.AddTime}}</text>
+          </view>
+        </view>
+          <view class="line-view" hidden="{{item.isLast}}"></view> 
+        </block>   
+      </view>
+    </block>
+  </view>
+  <view wx:else class="empty_tip" >
+    <image src="../../images/common_bg_kong_n.png" mode="widthFix"></image>
+    <view class="nodata_text_tip">数据竟然是空的</view>
+    <view class="fllow_text_tip">快去首页瞧瞧吧</view>
+  </view>
+</view>

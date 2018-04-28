@@ -1,0 +1,186 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f4f7fe;
+}
+.head-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.head-view image {
+  width: 100%;
+  height: 300rpx;
+}
+.head-view-section2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  width: 100%; 
+}
+.head-view-section2 image {
+  width: 100%;  
+  height: 250rpx;
+}
+.head-view-section2 .qrc-btn {
+  position: relative;
+  width: 80%;
+  font-size: 28rpx;
+  background: #ffffff;
+  border: 1rpx solid #7080fa;
+  margin-bottom: 30rpx;
+  color: #7080fa;
+}
+
+.head-view-section2 .picker-class {
+  position: relative;
+  margin-left: 80rpx;
+  width: 80%;
+  height: 80rpx;
+  font-size: 28rpx;
+  background: #ffffff;
+  border: 1rpx solid #7080fa;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+  color: #7080fa;
+  text-align: center;
+  line-height: 80rpx;
+}
+.tab_head {
+  position: relative;
+   /* width: 100%;  */
+   margin-top: 20rpx; 
+  background: #ffffff;
+  padding: 20rpx 30rpx; 
+}
+ .line-view {
+  background: #dbdbdb;
+  width: 100%;
+  height: 1rpx;
+}
+
+
+.tab-view {
+  /* width: 100%; */
+  background: #ffffff;
+  text-align: center;
+}
+
+/** 
+ * tab-item
+ */
+.tab-item {
+  width: 100%;
+}
+.tab-item .item-section1 {
+  display: flex;
+  width: 100%;
+  margin-left: 0;
+  padding: 30rpx 0rpx 0rpx 30rpx; 
+  border: 0rpx;
+}
+
+.tab-item image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.tab-item text {
+  font-size: 36rpx;
+  color: #333;
+  padding-left: 20rpx;
+}
+
+ .tab-item .applyNum {
+  margin-left: 20rpx;
+  padding: 5rpx 10rpx;
+  font-size: 20rpx;
+  border: 1rpx solid #dbdbdb; 
+  border-radius: 4rpx;
+  height: 100%;
+  color: #666;
+} 
+.tab-item .item-section2 {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30rpx;
+  margin-left: 0;
+  border: 0;  
+}
+.item-section2 .group-view1 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  border: 0;
+}
+.item-section2 .group-view2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  border: 0;
+}
+.item-section2 .group-view3 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  border: 0;
+}
+.group-view1 .top {
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  color: red;
+}
+.group-view1 .bottom {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.group-view2 .top {
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+.group-view2 .bottom {
+  font-size: 24rpx;
+  color: #999;
+}
+.group-view3 .top {
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+.group-view3 .bottom {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tab-item .item-section3 {
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  margin-left: 0;
+  border: 0;
+}
+.tab-item .hor-line{
+  /* height: 2rpx; */
+  height: 2rpx;
+  margin-left: 0rpx;
+  background: #dbdbdb;
+   border: 0;  
+}
+.item-section3 .apply-btn {
+  width: 100%;
+  padding: 15rpx 0;
+  margin-left: 0;
+  background-color: #ffffff;
+  color: #7080fa;
+  border: 0;
+  font-size: 30rpx;
+}
+
+.tab-item .section-view {
+  height: 20rpx;
+  margin-left: 0;
+  background: #f4f7fe;
+  border: 0;
+}

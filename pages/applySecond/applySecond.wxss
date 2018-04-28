@@ -1,0 +1,91 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f4f7fe;
+  margin-bottom: 90rpx;
+}
+
+.bg_item {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.item_title {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx;
+}
+.item_title .title_top {
+  font-size: 32rpx;
+  color: #333;
+}
+.item_title .title_bottom {
+  font-size: 24rpx;
+  color: #999;
+}
+.item_content {
+  display: flex;
+  flex-direction: row;
+  padding: 0rpx 30rpx 40rpx 30rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+}
+ .image_item {
+  display: flex;
+  flex-direction: column;
+  width: 46%;
+  /* align-items: center; */
+  background: #dbdbdb;
+  margin: 10rpx 10rpx;
+  /* align-content: center; */
+  border: 2rpx dotted #666;
+  position: relative;
+}
+.image_item .item_image {
+  width: 90%;
+  height: 200rpx;
+  padding: 15rpx 15rpx; 
+} 
+.image_item .select {
+  /* width: 100%;
+   height: 250rpx;  */
+}
+.image_item .line {
+  height: 2rpx;
+  width: 100%;
+  background: #999;
+}
+.image_item .title_text {
+  font-size: 32rpx;
+  text-align: center;
+  width: 90%;
+  /* background: #333;
+  opacity: 0.8; */
+  padding: 10rpx;
+}
+.image_item .delete_image {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -20rpx;
+  margin-left: 290rpx; 
+}
+.image_item .over {
+  /* z-index: 99;
+  color: red */
+}
+.section_view {
+  height: 20rpx;
+}
+.next_btn {
+  width: 100%;
+  height: 90rpx;
+  background: #7080fa;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: 90rpx;
+  color: #ffffff;
+  z-index: 99;
+  border-radius: 0rpx;
+}

@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="head-view">
+    <image src="http://clinicapi.qiezzitest.info/Images/QieZiJinRong_Home1_iOS.png" mode="aspectFill"></image>
+   <view class="head-view-section2">
+    <image src="http://clinicapi.qiezzitest.info/Images/QieZiJinRong_Home2_iOS.png" mode="aspectFit"></image>
+    <picker wx:if="{{allowSet}}" class="picker-class" bindchange="pickerAction" 
+      value="{{caseIndex}}" range="{{caseArray}}">诊所二维码</picker>
+    <button wx:else class="qrc-btn" bindtap="qrcbtnAction">诊所二维码</button> 
+   </view> 
+    <view class="tab_head">
+    <text>推荐产品</text>
+    </view>
+    <view class="line-view"></view>
+  </view>
+  <view class="tab-view">
+  <block wx:for="{{itemList}}">
+    <view class="tab-item" bindtap="tabItemAction">
+      <view class="item-section1">
+        <image src="{{item.PhotoUrl}}" mode="aspectFill"></image>
+        <text>{{item.ProductName}}</text>
+        <view class="applyNum">{{item.NowNumber}}人申请</view>
+      </view>
+      <view class="item-section2">
+        <view class="group-view1">
+          <text class="top">{{item.AllowMinCost}}~{{item.AllowMaxCost}}</text>
+          <text class="bottom">贷款额度（元）</text>
+        </view> 
+         <view class="group-view2">
+          <text class="top">{{item.InstalmentsNum}}</text>
+          <text class="bottom">期数</text>
+        </view>
+         <view class="group-view3">
+          <text class="top">{{item.SuccessRate}}%</text>
+          <text class="bottom">成功率</text>
+        </view>
+      </view>
+      <view class="hor-line"></view>  
+      <view class="item-section3">
+       <view class="apply-btn" bindtap="applyBtnAction" 
+       data-productId="{{item.ProductId}}">立即申请</view>
+      </view>
+      <view class="section-view" hidden="{{index == itemList.length - 1}}"></view>
+    </view> 
+  </block>
+    
+  </view>
+</view>

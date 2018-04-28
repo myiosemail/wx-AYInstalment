@@ -1,0 +1,132 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+
+.swiper-tab {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  border-bottom: 2rpx solid #dbdbdb;
+  line-height: 84rpx;
+  font-size: 30rpx;
+  background: #ffffff;
+}
+.swiper-tab-list {
+  /* flex: 1; */
+  color: #666;
+}
+.active {
+  border-bottom: 4rpx solid #7080fa;
+  color: #7080fa;
+}
+
+/**tab-view*/
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+.tab-item .group-top{
+  display: flex;
+  justify-content: space-between;
+}
+.group-top .left-view {
+  display: flex;
+  padding: 20rpx 30rpx;
+  align-items: center;
+}
+.left-view image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.left-view text {
+   padding: 10rpx 20rpx; 
+   font-size: 32rpx;
+
+}
+.group-top .right-view {
+  padding: 20rpx 30rpx; 
+  height: 100%; 
+}
+.right-view text {
+ font-size: 32rpx;
+ color: #999;
+ height: 100%;
+}
+.line-view {
+  height: 2rpx;
+  background: #dbdbdb;
+}
+.tab-item .group-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.group-bottom .bottom-left {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 0 10rpx 30rpx;
+}
+.section-item {
+  display: flex;
+  padding:  0 0 20rpx 0;
+  font-size: 28rpx;
+  justify-content: space-between;
+}
+.section-item .left {
+  color: #999;
+}
+.section-item .right {
+  flex: 1;
+  padding-left: 15rpx;
+  text-align: left;
+  width: 50%; 
+}
+
+.group-bottom .bottom-right {
+  padding: 30rpx 30rpx;
+  width: 30%;
+  text-align: right;
+}
+
+.bottom-right text {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.section-view {
+  height: 20rpx;
+  background: #f4f7fe;
+}
+
+.on {
+ color: red;
+}
+
+/**
+  * 无数据显示 
+  */
+.empty_tip {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+ }
+.empty_tip image {
+   width: 340rpx;
+   height: 340rpx;
+ }
+ .empty_tip .nodata_text_tip {
+   padding-top: 20rpx;
+   font-size: 36rpx;
+   color: #666
+ }
+ .empty_tip .fllow_text_tip {
+   font-size: 32rpx;
+   color: #999
+ }

@@ -1,0 +1,6 @@
+
+<view class="tab-view">
+  <text class="top">请申请人使用常用微信号扫描下方二维码进行申请</text>
+  <image src="{{qrcImageUrl}}" bindlongtap="qrcLongTapAction"></image>
+  <text class="bottom">温馨提示：您扫描的微信号为您后期接受账号提醒的唯一微信号</text>
+</view>

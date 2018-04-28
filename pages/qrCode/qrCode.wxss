@@ -1,0 +1,32 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+
+.tab-view {
+  display: flex;
+  flex-direction: column;
+}
+.tab-view .top {
+  display: flex;
+  font-size: 32rpx;
+  color: #333;
+  width: 50%; 
+  line-height: 60rpx;
+  margin: 0 auto; 
+}
+.tab-view .bottom {
+  font-size: 26rpx;
+  color: #666;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 40rpx;
+}
+.tab-view image {
+  width: 460rpx;
+  height: 460rpx;
+  margin: 0 auto;
+  padding: 60rpx 0;
+}

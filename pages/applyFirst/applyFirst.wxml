@@ -1,0 +1,175 @@
+
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/> 
+
+<view class="page_view">
+  <form bindsubmit="sumitForm">
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">申请人姓名</view>
+    </view>
+    <view class="cell_right">
+      <input name="applyName" value="{{applyName}}" class="right_input" type="number" placeholder="请与身份证姓名保持一致" bindblur="applyNameBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+    <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">身份证号</view>
+    </view>
+    <view class="cell_right">
+      <input name="applyIdCard" value="{{idCard}}" class="right_input" type="number" placeholder="身份证号要与姓名匹配" bindblur="applyIdCarBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+  <view class="cell_left">
+    <view class="left_label">手机号</view>
+  </view>
+  <view class="cell_right">
+    <input name="applyTel" value="{{tel}}" class="right_input" type="number" placeholder="请输入银行预留手机号" bindblur="applyTelBlur"></input>
+  </view>
+</view>
+<view class="cell_hor_line"></view>
+
+<view class="public_cell_picker">
+  <view class="cell_left">
+    <view class="left_label">银行</view>
+  </view>
+  <view class="cell_right">
+      <view class="left">
+        <picker class="picker_class" bindchange="bindBankChange" 
+      value="{{bankCaseIndex}}" range="{{bankCaseArray}}">
+         <text>{{bankCaseArray[bankCaseIndex]}}</text>
+        </picker>
+      </view>
+      <view class="right">
+        <image src="../../images/arrowright.png"></image> 
+      </view>
+  </view>
+</view>
+<view class="cell_hor_line"></view>
+<view class="public_cell_input">
+  <view class="cell_left">
+    <view class="left_label">银行卡号</view>
+  </view>
+  <view class="cell_right">
+    <input name="applyBank" value="{{applyBank}}" class="right_input" type="number" placeholder="请输入银行卡号" bindblur="applyBankBlur"></input>
+  </view>
+</view>
+<view class="section_hor_line"></view>
+<view class="radio_group">
+    <view class="title">申请产品</view>
+    <view class="content">
+      <block wx:for="{{typeNames}}">
+        <text class="item_info text_over {{item.checked?'checked':''}}" 
+        data-id="{{index}}" data-items="{{item.InstalmentsNum}}" data-productid="{{item.ProductId}}" bindtap="productItemTap">{{item.ProductName}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">治疗费</view>
+    </view>
+    <view class="cell_right">
+      <input name="treatAmount" value="{{treatAmount}}" class="right_input" type="number" placeholder="请输入治疗费" bindinput="treatInputChange"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>  
+    <view class="public_cell_input">
+      <view class="cell_left">
+        <view class="left_label">贷款金额</view>
+      </view>
+      <view class="cell_right">
+        <input name="loanAmount" value="{{loanAmount}}" class="right_input" type="number" placeholder="最少1000" bindblur="loanblurChange"></input>
+      </view>
+    </view>
+  <view class="cell_hor_line"></view>  
+    <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">首付金额</view>
+    </view>
+    <view class="cell_right">
+      <input name="firstPayAmount" value="{{firstPayAmount}}" class="right_input" type="number" ></input>
+    </view>
+  </view>
+ <view class="cell_hor_line"></view> 
+ <view class="radio_group">
+    <view class="title">贷款期数</view>
+    <view class="content">
+      <block wx:for="{{loanTypeNames}}">
+        <text class="item_info text_over {{item.checked?'checked':''}}" 
+        data-id="{{index}}" data-assumetype="{{item.InterestAssumeType}}" data-num="{{item.Num}}"
+         bindtap="loanItemTap">{{item.Num}}期</text>
+      </block>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view> 
+   <view class="radio_group">
+    <view class="title">手续费承担比例</view>
+    <view class="content">
+      <block wx:for="{{rateTypeNames}}">
+        <text class="item_rate_info text_over {{item.checked?'checked':''}}" 
+        data-id="{{index}}" bindtap="rateItemTap">{{item.name}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view> 
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">每期手续费</view>
+    </view>
+    <view class="cell_right">
+      <input name="expenseAmount" value="{{expenseAmount}}" class="right_input" type="number"></input>
+    </view>
+  </view>
+  <view class="section_hor_line"></view>
+
+<view class="switch_cell">
+  <view class="swith_cell_left">
+    <view class="switch_left_label">为直系亲属申请</view>
+  </view>
+  <view class="switch_cell_right">
+    <switch checked="{{forImmediateFamily}}" color="#605bf5" bindchange="switchChange"></switch>
+  </view>
+</view>
+<block wx:if="{{forImmediateFamily}}">
+  <view class="public_cell_input">
+  <view class="cell_left">
+    <view class="left_label">就诊人姓名</view>
+  </view>
+  <view class="cell_right">
+    <input name="visitName" value="{{visitName}}" class="right_input" type="number" placeholder="请输入就诊人姓名" bindblur="visitNameBlur"></input>
+  </view>
+</view>
+<view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">身份证号</view>
+    </view>
+    <view class="cell_right">
+      <input name="visitIdCar" value="{{visitIdCar}}" class="right_input" type="number" placeholder="身份证号要与姓名匹配" bindblur="visitIdCarBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">就诊人关系</view>
+    </view>
+    <view class="cell_right">
+        <view class="left">
+          <picker class="picker_class" bindchange="bindReleationChange" 
+        value="{{releationCaseIndex}}" range="{{releationCaseArray}}">
+          <text>{{releationCaseArray[releationCaseIndex]}}</text>
+          </picker>
+        </view>
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+</block>
+<button class="next_btn" form-type="submit">下一步</button>
+</form>
+</view>

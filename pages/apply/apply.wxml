@@ -1,0 +1,56 @@
+
+<view class="swiper-tab">
+  <block wx:for="{{tabbarTitles}}" wx:for-index="index" data-idx="{{index}}" bindtap="switchNav">
+    <view class="swiper-tab-list {{currentTab == index ? 'active':''}}" 
+   data-current="{{index}}" bindtap="switchNav">{{item}}</view>
+  </block>
+</view>
+
+<swiper class="swiper-box" current="{{currentTab}}" 
+  duration="300" style="height:{{winHeight - 42}}px;" bindchange="bindSwipChange">
+  <block wx:for="{{tabbarTitles}}">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 42}}px;" 
+       bindscrolltolower="lowerToBottom">
+        <view wx:if="{{itemList.length > 0}}">
+          <block wx:for="{{itemList}}">
+            <view class="tab-item" bindtap="itemClick" data-id="{{item.OrderId}}">
+              <view class="group-top">
+                <view class="left-view">
+                  <image src="{{item.PhotoUrl}}" mode="aspectFill"></image>
+                  <text>{{item.ProductName}}</text>
+                </view>
+                <view class="right-view">
+                  <text>{{item.StatusName}}</text>
+                </view>
+              </view>
+              <view class="line-view"></view>
+              <view class="group-bottom">
+                <view class="bottom-left">
+                    <block wx:for="{{item.DataSource}}">
+                    <view class="section-item">
+                      <text class="left">{{item.title}}</text>
+                      <text class="right {{0 == index ? 'on':''}}">{{item.content}}</text>
+                    </view> 
+                  </block>  
+                </view>
+                <view class="bottom-right">
+                  <text>{{item.StepsName}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="section-view" hidden="{{index == itemList.length - 1}}"></view>
+          </block> 
+        </view>
+        <view wx:else class="empty_tip" >
+          <image src="../../images/common_bg_kong_n.png" mode="widthFix"></image>
+          <view class="nodata_text_tip">数据竟然是空的</view>
+          <view class="fllow_text_tip">快去首页瞧瞧吧</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+

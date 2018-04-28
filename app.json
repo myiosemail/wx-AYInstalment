@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/apply/apply",
+    "pages/account/account",
+    "pages/rateset/rateset",
+    "pages/itemDetail/itemDetail",
+    "pages/applyDetail/applyDetail",
+    "pages/qrCode/qrCode",
+    "pages/applyFirst/applyFirst",
+    "pages/applySecond/applySecond",
+    "pages/applyThree/applyThree",
+    "pages/productDetail/productDetail"     
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "networkTimeout": {
+    "request":60000
+  },
+  "enablePullDownRefresh": false,
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#605bf5",
+    "borderStyle": "white",
+    "backgroundColor": "#f8f9fb",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "爱牙分期",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-actived.png"
+      },
+      {
+        "pagePath": "pages/apply/apply",
+        "text": "申请",
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board-actived.png"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "text": "分期管理",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-actived.png"
+      }
+    ]
+  }
+}

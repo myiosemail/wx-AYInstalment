@@ -1,0 +1,18 @@
+
+<view class="page-head">
+  <text class="head-section1">诊所剩余额度（元）</text>
+  <text class="head-section2">¥ {{remainLimit}}</text>
+  <text class="head-section3">总额度 ¥ {{totalLimit}}</text>
+</view>
+
+<view class="page-bottom">
+  <view class="bottom-section1" bindtap="sectionDetailTapAction">
+    <text>明细</text>
+    <image src="../../images/arrowright.png"></image> 
+  </view>
+  <view class="line-view"></view>
+  <view class="bottom-section2" bindtap="sectionSetTapAction">
+    <text>利息承担设置</text>
+    <image src="../../images/arrowright.png"></image> 
+  </view>
+</view>

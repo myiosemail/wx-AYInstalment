@@ -1,0 +1,83 @@
+<view class="float-container">
+  <view class="float-top">
+    <view class="tab-item" bindtap="itemClick">
+          <view class="group-top">
+            <view class="left-view">
+              <image src="{{detailModel.PhotoUrl}}" mode="aspectFill"></image>
+              <text>{{detailModel.ProductName}}</text>
+            </view>
+          </view>
+          <view class="line-view"></view>
+          <view class="group-bottom">
+            <view class="bottom-left">
+                <block wx:for="{{topItems}}">
+                <view class="section-item">
+                  <text class="left">{{item.title}}</text>
+                  <text class="right {{0 == index ? 'on':''}}">{{item.content}}</text>
+                </view> 
+              </block>  
+            </view>
+          </view>
+         </view>
+         <view class="section-view"></view>
+  </view>
+  <float-tab
+      items="{{tabs}}"
+      fixedBar="{{isShowFloatTab}}"
+      bindtabclick="clickTab"/>
+  
+  <view wx:if="{{curTabId=='progress'}}" class="tab_list_data">
+       <view class="apply_progress">
+        <block wx:for="{{detailModel.OrderStepsList}}">
+          <view class="progress_item">
+          <view class="item_left">
+            <view class="group-left">
+              <image src="http://img5.qiezzi.com/GoldEggplant-TieMian.png" mode="aspectFill"></image>
+              <view class="hor_line" hidden="{{index == detailModel.OrderStepsList.length - 1}}"></view>
+            </view>
+            <view class="group-right">
+              <text class="title">{{item.Title}}</text>
+              <text class="content">{{item.Content}}</text>
+            </view>
+          </view>
+          <view class="item-right">
+            <!-- <button>继续填写</button> -->
+          </view>
+        </view>
+        </block>
+      </view> 
+  </view>
+  <view wx:else class="tab_list_data">
+      <view class="apply_detail">
+       <block wx:for="{{infos}}">
+         <view class="detail_item">
+          <view class="item_top">
+            <text>{{item.title}}</text>
+          </view>
+          <view class="line_view"></view>
+          <view class="item_bottom">
+           <block wx:for="{{item.contentList}}">
+            <view class="item_bottom_section">
+              <text class="left">{{item.title}}</text>
+              <text class="middle">{{item.content}}</text>
+              <text class="right">{{item.detail}}</text>
+            </view>
+           </block>
+          </view>
+          <view class="section_view" hidden="{{index == infos.length - 1}}"></view>
+        </view>
+       </block>
+       <view class="photos_view" hidden="{{imgArr.length <= 0}}">
+        <view class="photo_title">
+          <text>医疗确认照片</text>
+        </view>
+        <view class="imgList">      
+            <view class="imgList-li" wx:for="{{imgArr}}">
+             <image class='img' src='{{item}}' 
+             data-index='{{index}}' bindtap='previewImg'></image>
+           </view>
+          </view>
+       </view>
+      </view>
+  </view>
+</view>

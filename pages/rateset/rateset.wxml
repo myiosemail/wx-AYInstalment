@@ -1,0 +1,22 @@
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/> 
+
+<view class="page-bottom">
+  <view class="bottom-section1">
+    <text>{{itemDict1.num}}期</text>
+    <picker class="picker-class" bindchange="bindDetailChange" 
+     value="{{caseIndex1}}" range="{{caseArray}}">
+     <text>{{caseArray[caseIndex1]}}</text>
+     <image src="../../images/arrowright.png"></image> 
+    </picker>
+  </view>
+  <view class="line-view"></view>
+  <view class="bottom-section2">
+    <text>{{itemDict2.num}}期</text>
+    <picker class="picker-class" bindchange="bindSetChange"
+     value="{{caseIndex2}}" range="{{caseArray}}">
+      <text>{{caseArray[caseIndex2]}}</text>
+      <image src="../../images/arrowright.png"></image> 
+    </picker> 
+  </view>
+</view>

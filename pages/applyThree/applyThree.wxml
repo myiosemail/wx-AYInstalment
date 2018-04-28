@@ -1,0 +1,268 @@
+
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/> 
+
+<import src="../../components/picker-city/pickerCity"/> 
+<template is="areaData" data="{{...item}}"/>
+
+<form bindsubmit="sumitForm">
+  <view class="bg_section_one">
+  <view class="section_title">
+    <text>申请人个人信息</text>
+  </view>
+  <view class="cell_space_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">现居地地区</view>
+    </view>
+    <view class="cell_right">
+        <view class="left" data-id="0" bindtap="translate">{{Province}} {{City}} {{District}}</view> 
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">现居地地址</view>
+    </view>
+    <view class="cell_right">
+      <input name="address" value="{{Address}}" class="right_input" type="number" placeholder="请输入现居地地址" bindblur="addressBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">婚姻状况</view>
+    </view>
+    <view class="cell_right">
+        <view class="left">
+          <picker class="picker_class" bindchange="maritalChange" 
+        value="{{MaritalStatus}}" range="{{MaritalStatusCaseArr}}">
+          <text>{{MaritalStatusCaseArr[MaritalStatus]}}</text>
+          </picker>
+        </view>
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">学历</view>
+    </view>
+    <view class="cell_right">
+        <view class="left">
+          <picker class="picker_class" bindchange="highestDegreeChange" 
+        value="{{HighestDegree}}" range="{{HighestDegreeCaseArr}}">
+          <text>{{HighestDegreeCaseArr[HighestDegree]}}</text>
+          </picker>
+        </view>
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">住宅性质</view>
+    </view>
+    <view class="cell_right">
+        <view class="left">
+          <picker class="picker_class" bindchange="housingPropertyChange" 
+        value="{{HousingProperty}}" range="{{HousingPropertyCaseArr}}">
+          <text>{{HousingPropertyCaseArr[HousingProperty]}}</text>
+          </picker>
+        </view>
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="section_view"></view>
+</view>
+
+<view class="bg_section_two">
+  <view class="section_title">
+    <text>申请人单位信息</text>
+  </view>
+  <view class="cell_space_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">职业状态</view>
+    </view>
+    <view class="cell_right">
+        <view class="left">
+          <picker class="picker_class" bindchange="employmentStatusChange" 
+        value="{{EmploymentStatus}}" range="{{EmploymentStatusCaseArr}}">
+          <text>{{EmploymentStatusCaseArr[EmploymentStatus]}}</text>
+          </picker>
+        </view>
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">单位名称</view>
+    </view>
+    <view class="cell_right">
+      <input name="companyName" value="{{CompanyName}}" class="right_input" type="number" placeholder="请输入单位名称" bindblur="companyNameBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">单位地区</view>
+    </view>
+    <view class="cell_right">
+        <view class="left" data-id="1" bindtap="translate">{{CompanyProvince}} {{CompanyCity}} {{CompanyDistrict}}</view> 
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">单位地址</view>
+    </view>
+    <view class="cell_right">
+      <input name="companyAddress" value="{{CompanyAddress}}" class="right_input" type="number" placeholder="请输入单位地址" bindblur="companyAddresBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_picker">
+    <view class="cell_left">
+      <view class="left_label">单位行业</view>
+    </view>
+    <view class="cell_right">
+        <view class="left">
+          <picker class="picker_class" bindchange="companyIndustryChange" 
+        value="{{CompanyIndustry}}" range="{{CompanyIndustryCaseArr}}">
+          <text>{{CompanyIndustryCaseArr[CompanyIndustry]}}</text>
+          </picker>
+        </view>
+        <view class="right">
+          <image src="../../images/arrowright.png"></image> 
+        </view>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">单位电话</view>
+    </view>
+    <view class="cell_right">
+      <input name="companyTelephone" value="{{CompanyTelephone}}" class="right_input" type="number" placeholder="请输入单位电话" bindblur="CompanyTelBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">部门</view>
+    </view>
+    <view class="cell_right">
+      <input name="companyDepartment" value="{{CompanyDepartment}}" class="right_input" type="number" placeholder="请请输入部门" bindblur="companyDepartmentBlur"></input>
+    </view>
+  </view>
+  <view class="cell_hor_line"></view>
+  <view class="public_cell_input">
+    <view class="cell_left">
+      <view class="left_label">月收入</view>
+    </view>
+    <view class="cell_right">
+      <input name="salary" value="{{Salary}}" class="right_input" type="number" placeholder="请输入月收入" bindblur="salaryBlur"></input>
+    </view>
+  </view>
+<view class="section_view"></view>  
+  <view class="bg_section_third">
+    <view class="section_title">
+      <text>直系亲属信息</text>
+    </view>
+    <view class="cell_space_line"></view>
+    <view class="public_cell_input">
+      <view class="cell_left">
+        <view class="left_label">姓名</view>
+      </view>
+      <view class="cell_right">
+        <input name="kinName" value="{{KinName}}" class="right_input" type="number" placeholder="请输入直系亲属姓名" bindblur="kinNameBlur"></input>
+      </view>
+    </view>
+    <view class="cell_hor_line"></view>
+    <view class="public_cell_picker">
+      <view class="cell_left">
+        <view class="left_label">关系</view>
+      </view>
+      <view class="cell_right">
+          <view class="left">
+            <picker class="picker_class" bindchange="kinRelationChange" 
+          value="{{KinRelation}}" range="{{KinRelationCaseArr}}">
+            <text>{{KinRelationCaseArr[KinRelation]}}</text>
+            </picker>
+          </view>
+          <view class="right">
+            <image src="../../images/arrowright.png"></image> 
+          </view>
+      </view>
+    </view>
+    <view class="cell_hor_line"></view>
+    <view class="public_cell_input">
+      <view class="cell_left">
+        <view class="left_label">手机号</view>
+      </view>
+      <view class="cell_right">
+        <input name="kinTelephone" value="{{KinTelephone}}" class="right_input" type="number" placeholder="请输入直系亲属手机号" bindblur="kinTelephoneBlur"></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="section_view"></view> 
+<view class="bg_section_four">
+    <view class="section_title">
+      <text>紧急联系人信息</text>
+    </view>
+    <view class="cell_space_line"></view>
+    <view class="public_cell_input">
+      <view class="cell_left">
+        <view class="left_label">姓名</view>
+      </view>
+      <view class="cell_right">
+        <input name="emergencyContactName" value="{{EmergencyContactName}}" class="right_input" type="number" placeholder="请输入紧急联系人姓名" bindblur="emergencyContactNameBlur"></input>
+      </view>
+    </view>
+    <view class="cell_hor_line"></view>
+    <view class="public_cell_picker">
+      <view class="cell_left">
+        <view class="left_label">关系</view>
+      </view>
+      <view class="cell_right">
+          <view class="left">
+            <picker class="picker_class" bindchange="emergencyRelationChange" 
+          value="{{EmergencyRelation}}" range="{{EmergencyRelationCaseArr}}">
+            <text>{{EmergencyRelationCaseArr[EmergencyRelation]}}</text>
+            </picker>
+          </view>
+          <view class="right">
+            <image src="../../images/arrowright.png"></image> 
+          </view>
+      </view>
+    </view>
+    <view class="cell_hor_line"></view>
+    <view class="public_cell_input">
+      <view class="cell_left">
+        <view class="left_label">手机号</view>
+      </view>
+      <view class="cell_right">
+        <input name="emergencyTelephone" value="{{EmergencyTelephone}}" class="right_input" type="number" placeholder="请输入紧急联系人手机" bindblur="emergencyTelephoneBlur"></input>
+      </view>
+    </view>
+  </view>
+  <button class="next_btn" form-type="submit">下一步</button>
+</form>
+

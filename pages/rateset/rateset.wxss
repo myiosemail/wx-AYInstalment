@@ -1,0 +1,35 @@
+page {
+   display: block;
+   min-height: 100%; 
+   background-color: #f4f7fe; 
+}
+
+.page-bottom {
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.page-bottom .bottom-section1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+}
+.page-bottom .bottom-section2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+}
+.page-bottom .line-view {
+  height: 1rpx;
+  margin-left: 30rpx;
+  background: #dbdbdb;
+}
+.picker-class {
+  color: #666;
+}
+.picker-class image {
+  width: 32rpx;
+  height: 32rpx; 
+  padding-left: 10rpx;
+}
